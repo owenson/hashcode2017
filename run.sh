@@ -8,5 +8,5 @@
 cd problems
 for f in *; do
     echo Processing $f
-    python ../$1 $f > ../solutions/$f.sol
+    pypy ../$1 $f > ../solutions/$f.sol
 done

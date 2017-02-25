@@ -11,9 +11,15 @@ caches = []
 class Cache:
     def __init__(self, id, capacity):
         self.capacity = capacity
+        self.maxCapacity = capacity
         self.id = id
         self.videos = []
         self.requestsSavings = [] #tuple (r, saving)
+
+    def clear(self):
+        self.videos = []
+        self.requestSavings = []
+        self.capacity = self.maxCapacity
 
     def finalise(self):
         self.requestsSavings = sorted(self.requestsSavings, key=operator.itemgetter(1), reverse=True)

@@ -1,4 +1,5 @@
 from models import *
+from score import score
 import random
 
 #sort requests by number, highest first
@@ -57,7 +58,7 @@ while actioned:
         bestRequest.serviced = True
         actioned = True
 
-
+sys.stderr.write("Score: %d\n" % score(endpoints))
 
 # produce the output
 print nCaches
